@@ -6,7 +6,7 @@
 const uint8_t OUTPUT_PIN = 5; // D1
 
 // Open AP settings
-const char* AP_SSID = "ESP8266-Open";
+const char* AP_SSID = "SmartBox-WIFI";
 
 // New: D2 control and web server
 const uint8_t PIN_D2 = 4; // D2 (GPIO4)
@@ -268,4 +268,5 @@ void handleSetD3() {
 void handleStateD3() {
   server.sendHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
   server.send(200, "application/json", String("{\"on\":") + (d3State ? "true" : "false") + "}");
+
 }
